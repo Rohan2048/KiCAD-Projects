@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "lm741") (type "KiCad") (uri "/home/rohan/Downloads/MISC/KiCAD-Practicals/lm741.pretty") (options "") (descr ""))
+)

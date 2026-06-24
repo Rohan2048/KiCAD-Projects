@@ -1,0 +1,16 @@
+* Simplified 74ACT74 D Flip-Flop (behavioral)
+* Pins: 1=CLRBAR, 2=PRBAR, 3=CLKP, 4=D1, 5=Q1, 6=Q1BAR
+
+.SUBCKT DFF 1 2 3 4 5 6
+* Inputs: 1=CLRBAR, 2=PRBAR, 3=CLKP, 4=D1
+* Outputs: 5=Q1, 6=Q1BAR
+
+* Behavioral D flip-flop: Q1 follows D1 on rising edge of CLKP
+B_Q1 5 0 V=IF(V(1)<1,0,IF(V(2)<1,5,IF(V(3)-V(3)_prev>2.5,V(4),V(5)))))
+B_Q1BAR 6 0 V=5-V(5)
+
+* Memory to detect rising edge (approx)
+V3_prev N_prev 0 DC 0
+BEDGE N_prev 0 V=V(3)
+
+.ENDS DFF

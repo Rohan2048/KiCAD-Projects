@@ -1,0 +1,33 @@
+* 74ACT74  Dual D-Type Positive-Edge-Triggered Flip-Flops w/ Preset & Clear
+*
+* The FACT Data Book, 1987, Fairchild
+* cv   06/22/90   Created from LS
+*
+* Pin order corrected to match schematic symbol:
+*   Pin 1: CLRBAR  (CD1BAR) - active-low Clear
+*   Pin 2: PRBAR   (SD1BAR) - active-low Preset  <-- swapped from original
+*   Pin 3: CLKP    (CP1)    - Clock
+*   Pin 4: D1               - Data input          <-- swapped from original
+*   Pin 5: Q1               - Output
+*   Pin 6: Q1BAR            - Inverted Output
+*
+.subckt 74ACT74  CLRBAR PRBAR CLKP D1 Q1 Q1BAR
++   optional: DPWR=$G_DPWR DGND=$G_DGND
++   params: MNTYMXDLY=0 IO_LEVEL=0
+UFF11 dff(1) DPWR DGND
++   PRBAR CLRBAR CLKP   D1   Q1 Q1BAR
++   D_ACT74 IO_ACT MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.model D_ACT74 ueff (
++   twpclmn=6ns     twclklmn=6ns
++   twclkhmn=6ns    tsudclkmn=3.5ns
++   tsupcclkhmn=0ns thdclkmn=1ns
++   tppcqlhmn=1ns   tppcqlhty=5.5ns
++   tppcqlhmx=10.5ns    tppcqhlmn=1ns
++   tppcqhlty=6ns   tppcqhlmx=11.5ns
++   tpclkqlhmn=1ns  tpclkqlhty=7.5ns
++   tpclkqlhmx=13ns tpclkqhlmn=1ns
++   tpclkqhlty=6ns  tpclkqhlmx=11.5ns
++   )
+*$

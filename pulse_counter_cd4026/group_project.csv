@@ -1,0 +1,8 @@
+﻿Reference,Qty,Value,DNP,Exclude from BOM,Exclude from Board,Footprint,Datasheet
+"C4,C5",2,100n,,,,Capacitor_THT:C_Disc_D7.5mm_W5.0mm_P5.00mm,
+"CD4026B1,CD4026B2",2,,,,,CD4026B:CD4026B,
+"J1,J2,J3,J4,J5,J6",6,Conn_01x01_Pin,,,,Connector_Pin:Pin_D0.7mm_L6.5mm_W1.8mm_FlatFork,
+R3,1,3.3k,,,,Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,
+"R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,R21,R22,R23,R24",14,330,,,,Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal,
+"SUN056CC1,SUN056CC2",2,,,,,7-segment display:SUN056CC,
+U2,1,LM7805_TO220,,,,Package_TO_SOT_THT:TO-220-3_Vertical,https://www.onsemi.cn/PowerSolutions/document/MC7800-D.PDF

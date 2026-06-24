@@ -1,0 +1,21 @@
+* Simple D Flip-Flop for KiCad Simulation
+* Pins: 1=C (Clock), 2=D, 7=Q
+
+* Subcircuit definition
+.SUBCKT DFF_SWITCH 1 2 7
+* 1=C, 2=D, 7=Q
+
+* Internal node for storing state
+NINT 0
+
+* Latch D on rising edge of C
+B_Q NINT 0 V=IF(V(1)-V(1)_prev>2.5, V(2), V(NINT))
+
+* Output
+E_Q 7 0 VOL=V(NINT)
+
+* Track previous clock voltage (for edge detection)
+V1_prev NINT_prev 0 DC 0
+BEDGE NINT_prev 0 V=V(1)
+
+.ENDS DFF_SWITCH

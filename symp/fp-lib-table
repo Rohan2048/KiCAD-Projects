@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "LM741") (type "KiCad") (uri "${KIPRJMOD}/LM741.pretty") (options "") (descr ""))
+)

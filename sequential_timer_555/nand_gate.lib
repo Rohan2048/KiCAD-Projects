@@ -1,0 +1,14 @@
+.model NMOS_VTL NMOS (LEVEL=1 VTO=0.7 KP=200u)
+.model PMOS_VTL PMOS (LEVEL=1 VTO=-0.7 KP=100u)
+
+.subckt NAND2 gnd i1 i2 o vdd
+
+* PMOS (stronger pull-up)
+Mp1 o i1 vdd vdd PMOS_VTL W=2u L=0.1u
+Mp2 o i2 vdd vdd PMOS_VTL W=2u L=0.1u
+
+* NMOS (series pull-down)
+Mn1 o  i1 t1  gnd NMOS_VTL W=1u L=0.1u
+Mn2 t1 i2 gnd gnd NMOS_VTL W=1u L=0.1u
+
+.ends NAND2

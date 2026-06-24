@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "lm741_opamp")(type "KiCad")(uri "${KIPRJMOD}/lm741_opamp.kicad_sym")(options "")(descr ""))
+)
